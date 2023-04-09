@@ -71,5 +71,9 @@ class AdminController extends Controller
         $category=category::all();
         return view('admin.delete_category',compact('category'));
     }
+
+    public function add_scheme(){
+        return view('admin.add_scheme');
+    }
    
 }

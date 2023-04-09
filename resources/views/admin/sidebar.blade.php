@@ -39,6 +39,14 @@
               <span class="menu-title">Delete Category</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('add_scheme')}}">
+              <span class="menu-icon" >
+                <img src="custom_img\add_scheme.png" alt="" srcset="">
+              </span>
+              <span class="menu-title">Add Scheme</span>
+            </a>
+          </li>
           
           
         </ul>

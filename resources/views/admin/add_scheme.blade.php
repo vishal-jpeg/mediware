@@ -30,51 +30,48 @@
     <link rel="stylesheet" href="admin_res/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin_res/assets/images/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
     <div class="container-scroller style="background-color:#191c25;>
       <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper" style="background-color:#191c25;">
+      <div class="container-fluid page-body-wrapper pt-5" style="background-color:#191c25;">
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <!-- partial -->
-        <div class="container-fluid page-body-wrapper" style="background-color:#191c25;">
-        <div class="d-flex ">
-          <div class="row">
-            <div class="col-12 grid-margin">
-            <div class="card">
-                <div class="card-body">
-                <h4 class="card-title">Camps for you</h4>
-                <div class="table-responsive">
-                    <table class="table">
-                    <thead>
-                        <tr>
-                        <th> <span class="ps-5">Sno</th>
-                        <th> <span class="ps-5 pe-5">Category Name </span></th>
-                        <th>Delete camp</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($category as $categories)
-                        <tr>
-                        <td>
-                            <span class="ps-5">{{$categories->id}}</span>
-                        </td>
-                        <td> <span class="ps-5 pe-5"> {{$categories->name}}</span> </td>
-                        <td><a class="btn btn-primary" href="{{url('del_category',$categories->id)}}" onclick="return confirm('Are you sure that you want to delete this category')" type="button"> Delete </a></td>
-                        </tr>
-                    @endforeach 
-                    </tbody>
-                    </table>
+        <div class="form">
+            <!--<div class="card-body mt-3">
+            @if($errors)
+              @foreach($errors->all() as $errors)
+                <li style="color:white;">
+                {{$errors}}
+                </li>
+              @endforeach
+            @endif
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close btn-close-black"  data-bs-dismiss="alert" aria-label="Close">&times;</button>
+                    <strong>{{ $message }}</strong>  
                 </div>
-                </div>
-            </div>
-            </div>
-          </div>
-      </div>
-      
+            @endif -->
+            </div> 
+            <form action="{{url('upload_scheme')}}" method="post" enctype="multipart/form-data">
+              @csrf
+              <div class="mb-3 mt-5">
+                <label for="schemeName" class="form-label">Scheme Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the name of the scheme" >
+                <div id="nameHelp" class="form-text">This should describe that summaries of the scheme.</div>
+              </div>
+              <div class="mb-3 mt-5">
+                <label for="schemeDes" class="form-label">Scheme Description</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the description of the scheme" >
+                <div id="nameHelp" class="form-text">This should describe the description of the scheme.</div>
+              </div>
+              <input type="submit" value="submit" class="btn btn-success">
+            </form>
+        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
@@ -102,6 +99,8 @@
     <script src="admin_res/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
     <!--date and time picker script-->
-   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </body>
 </html>

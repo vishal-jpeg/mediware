@@ -49,3 +49,4 @@ Route::post('/upload_category',[AdminController::class,'upload_category']);
 
 Route::get('/delete_category',[AdminController::class,'delete_category']);
 
+Route::get('/add_scheme',[AdminController::class,'add_scheme']);
