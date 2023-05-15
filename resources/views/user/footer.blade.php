@@ -1,43 +1,44 @@
-
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row px-md-3">
-        <div class="col-sm-6 col-lg-4 py-3">
-          <h5>Company</h5>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row px-md-3">
+      <div class="col-sm-6 col-lg-3 py-3">
+        <h5>Quick links</h5>
           <ul class="footer-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Editorial Team</a></li>
-            <li><a href="#">Protection</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="{{url('/schemes')}}">Schemes</a></li>
+            <li><a href="{{url('/camp')}}">Camps</a></li>
           </ul>
-        </div>
-        <div class="col-sm-6 col-lg-4 py-3">
-          <h5>More</h5>
-          <ul class="footer-menu">
-            <li><a href="#">Terms & Condition</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Join as Doctors</a></li>
-          </ul>
-        </div>
-
-        <div class="col-sm-6 col-lg-4 py-3">
-          <h5>Contact</h5>
-          <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-          <a href="#" class="footer-link">701-573-7582</a>
-          <a href="#" class="footer-link">healthcare@temporary.net</a>
-
-          <h5 class="mt-3">Social Media</h5>
-          <div class="footer-sosmed mt-3">
-            <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
-          </div>
-        </div>
       </div>
+      <div class="col-sm-6 col-lg-3 py-3">
+        <h5>More</h5>
+        <ul class="footer-menu">
+          <li><a href="{{url('/404')}}">Terms & Condition</a></li>
+          <li><a href="{{url('/404')}}">Privacy</a></li>
+          <li><a href="{{url('/404')}}">Advertise</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3 py-3">
+        <h5>Team members</h5>
+        <ul class="footer-menu">
+          <li class="mai-person p-2"> VISHAL S</li>
+          <li class="mai-person p-2"> MUHILAN M</li>
+          <li class="mai-person p-2"> THARUN M</li>
+          <li class="mai-person p-2"> THEAGARAJAN A C</li>
 
-      <hr>
-
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3 py-3">
+        <h5>Contact Info</h5>
+        <ul class="footer-menu">
+          <li class="mai-mail"><a href="mailto:vishnuvaradhan207@gmail.com" class="p-2" > Contact Vishal</a></li>
+          <li class="mai-mail"><a href="mailto:muhilmurugan31@gmail.com" class="p-2"> Contact Muhilan</a></li>
+          <li class="mai-mail"><a href="mailto:tharun9609@gmail.com"  class="p-2" > Contact Tharun </a></li>
+          <li class="mai-mail"><a href="mailto:theaga2092002@gmail.com" class="p-2" > Contact Theagarajan</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <hr>
+
+  </div>
+</footer>

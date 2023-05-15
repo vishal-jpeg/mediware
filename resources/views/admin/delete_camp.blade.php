@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin</title>
+    <title>MEDIWARE</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin_res/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin_res/assets/vendors/css/vendor.bundle.base.css">
@@ -61,7 +61,7 @@
                             <td> {{$camps->endtime}}</td>
                             <td> {{$camps->date}}</td>
                             <td> <a href="/camp_image/{{$camps->image}}"><img src="/camp_image/{{$camps->image}}" ></a></td>
-                            <td><a class="btn btn-primary" href="{{url('deleting',$camps->id)}}" onclick="return confirm('Are you sure that you want to delete this camp')" type="button"> Delete </a></td>
+                            <td><a class="btn btn-primary" href="{{url('del_category',$camps->id)}}" onclick="return confirm('Are you sure that you want to delete this camp')" type="button"> Delete </a></td>
                           </tr>
                         @endforeach 
                         </tbody>

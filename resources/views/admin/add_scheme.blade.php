@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
   <style type="text/css">
-      label{
-       color:white;
-      }
+     
       .form{
         margin-left:15rem;
       }
@@ -13,7 +11,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>MEDIWARE</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin_res/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin_res/assets/vendors/css/vendor.bundle.base.css">
@@ -30,7 +28,6 @@
     <link rel="stylesheet" href="admin_res/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin_res/assets/images/favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
     <div class="container-scroller style="background-color:#191c25;>
@@ -41,8 +38,9 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <!-- partial -->
-        <div class="form">
-            <!--<div class="card-body mt-3">
+        <div class="main-panel">
+          
+            <div class="card-body mt-3">
             @if($errors)
               @foreach($errors->all() as $errors)
                 <li style="color:white;">
@@ -55,22 +53,57 @@
                   <button type="button" class="btn-close btn-close-black"  data-bs-dismiss="alert" aria-label="Close">&times;</button>
                     <strong>{{ $message }}</strong>  
                 </div>
-            @endif -->
-            </div> 
-            <form action="{{url('upload_scheme')}}" method="post" enctype="multipart/form-data">
-              @csrf
-              <div class="mb-3 mt-5">
-                <label for="schemeName" class="form-label">Scheme Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the name of the scheme" >
-                <div id="nameHelp" class="form-text">This should describe that summaries of the scheme.</div>
+            @endif 
+            </div>
+            
+            <div class="col-md-6 grid-margin stretch-card mx-auto">
+             
+              <div class="card">
+                <h5>Add schemes</h5>
+                <div class="card-body">        
+                  <form action="{{url('upload_scheme')}}" class="form-sample" method="POST">
+                    @csrf
+                  
+                   <div class="form-group">
+                      <label for="scheme_name">Scheme Name</label>
+                      <textarea class="form-control text-white" id="scheme_name" name="scheme_name" rows="3" required></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="small_description">Small Description</label>
+                      <textarea class="form-control text-white" id="small_description" name="small_description" rows="3" required></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="detailed_description">Detailed Description</label>
+                      <textarea class="form-control text-white" id="detailed_description" name="detailed_description" rows="5" required></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="eligibility">Eligibility</label>
+                      <textarea class="form-control text-white" id="eligibility" name="eligibility" rows="3" required></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="references">References</label>
+                      <textarea class="form-control text-white" id="references" name="references" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="category_id">Category</label>
+                      <select name="category_id" class="form-control text-white">
+                        <option value="">Select category</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-success">Add Scheme</button>
+                  </form>
+                </div>
               </div>
-              <div class="mb-3 mt-5">
-                <label for="schemeDes" class="form-label">Scheme Description</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the description of the scheme" >
-                <div id="nameHelp" class="form-text">This should describe the description of the scheme.</div>
-              </div>
-              <input type="submit" value="submit" class="btn btn-success">
-            </form>
+            </div>
         </div>
         <!-- main-panel ends -->
       </div>
@@ -99,8 +132,6 @@
     <script src="admin_res/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
     <!--date and time picker script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   
   </body>
 </html>

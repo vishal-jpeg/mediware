@@ -30,9 +30,40 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
-        <!-- partial -->
-        @include('admin.body')
-        <!-- main-panel ends -->
+        <!-- delete camp table -->
+        <div class="container-fluid page-body-wrapper">            
+            <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Schemes for you</h4>
+                    <div class="table-responsive">
+                     <table class="table">
+                        <thead>
+                          <tr>
+                            <th> S.no</th>
+                            <th> Scheme Name</th>
+                            <th> Category_id </th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($scheme as $schemes)
+                              <tr>
+                                <td>{{$schemes->id}}</td>
+                                <td>{{$schemes->scheme_name}}</td>
+                                <td>{{$schemes->category_id}}</td>
+                                <td><a class="btn btn-primary" href="{{ url('update_scheme', $schemes->id) }}" onclick="return confirm('Are you sure that you want to edit this scheme')" type="button"> Edit </a></td>
+                              </td>
+                              </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <!-- table ends here -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>

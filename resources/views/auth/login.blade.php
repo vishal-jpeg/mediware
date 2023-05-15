@@ -1,7 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <div style="border:1px solid blue;font-size:25px;">
+            <b><span style="color:white;background-color:blue;padding:2px">MEDI</span>WARE</b></div>
+            <p style="font-size:12px;text-align:center"><b>MEDICAL AWARENESS</b></p>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

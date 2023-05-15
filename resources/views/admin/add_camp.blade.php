@@ -16,7 +16,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>MEDIWARE</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin_res/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin_res/assets/vendors/css/vendor.bundle.base.css">
@@ -45,58 +45,62 @@
         @include('admin.navbar')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper pt-5">
-          <div class="form">
-            <div class="card-body mt-3">
-              @if($errors)
-                @foreach($errors->all() as $errors)
-                 <li style="color:white;">
-                  {{$errors}}
-                 </li>
-                @endforeach
-              @endif
-              @if ($message = Session::get('success'))
-                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close btn-close-black"  data-bs-dismiss="alert" aria-label="Close">&times;</button>
-                      <strong>{{ $message }}</strong>  
+          
+            <div class="form">
+              <div class="card-body mt-3">
+                @if($errors)
+                  @foreach($errors->all() as $errors)
+                   <li style="color:white;">
+                    {{$errors}}
+                   </li>
+                  @endforeach
+                @endif
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <button type="button" class="btn-close btn-close-black"  data-bs-dismiss="alert" aria-label="Close">&times;</button>
+                        <strong>{{ $message }}</strong>  
+                    </div>
+                @endif 
+              </div>
+              <h2 style="color:white;">Add Camp</h2>
+              <form action="{{url('upload_camp')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3 mt-5">
+                  <label for="campType" class="form-label">Camp name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the type of the camp" >
+                  <div id="nameHelp" class="form-text">This should describe that what type of the camp will occur.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="location" class="form-label">location</label>
+                  <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location">
+                  <div id="loactionHelp" class="form-text">Enter the exact location of the place.</div>
+                </div>
+                <div class="row">
+                  <div class=" col-4 mb-3">
+                    <label for="starttime" class="form-label">Start Time</label>
+                    <input type="time" class="form-control" id="starttime" name="starttime" placeholder="Enter the start time">
+                    <div id="starttimeHelp" class="form-text">Enter the exact start Time.</div>
                   </div>
-              @endif 
+                  <div class=" col-4 mb-3">
+                    <label for="endtime" class="form-label">End Time</label>
+                    <input type="time" class="form-control" id="endtime" name="endtime" placeholder="Enter the end time" style="background:white;">
+                    <div id="endtimeHelp" class="form-text">Enter the exact end Time.</div>
+                  </div>
+                  <div class=" col-4 mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date"  name="date" placeholder="Enter the Date" style="background:white;">
+                    <div id="dateHelp" class="form-text">Enter the exact Date.</div>
+                  </div>
+                </div>
+                <div class=" mb-3">
+                  <input type="file" class="image form-control" id="image" name="image">
+                  <div class="form-text" id=""imageHelp></div>
+                </div>
+                <input type="submit" value="submit" class="btn btn-success">
+              </form>
             </div>
-            <form action="{{url('upload_camp')}}" method="post" enctype="multipart/form-data">
-              @csrf
-              <div class="mb-3 mt-5">
-                <label for="campType" class="form-label">Camp name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder=" Enter the type of the camp" >
-                <div id="nameHelp" class="form-text">This should describe that what type of the camp will occur.</div>
-              </div>
-              <div class="mb-3">
-                <label for="location" class="form-label">location</label>
-                <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location">
-                <div id="loactionHelp" class="form-text">Enter the exact location of the place.</div>
-              </div>
-              <div class="row">
-                <div class=" col-4 mb-3">
-                  <label for="starttime" class="form-label">Start Time</label>
-                  <input type="time" class="form-control" id="starttime" name="starttime" placeholder="Enter the start time">
-                  <div id="starttimeHelp" class="form-text">Enter the exact start Time.</div>
-                </div>
-                <div class=" col-4 mb-3">
-                  <label for="endtime" class="form-label">End Time</label>
-                  <input type="time" class="form-control" id="endtime" name="endtime" placeholder="Enter the end time" style="background:white;">
-                  <div id="endtimeHelp" class="form-text">Enter the exact end Time.</div>
-                </div>
-                <div class=" col-4 mb-3">
-                  <label for="date" class="form-label">Date</label>
-                  <input type="date" class="form-control" id="date"  name="date" placeholder="Enter the Date" style="background:white;">
-                  <div id="dateHelp" class="form-text">Enter the exact Date.</div>
-                </div>
-              </div>
-              <div class=" mb-3">
-                <input type="file" class="image form-control" id="image" name="image">
-                <div class="form-text" id=""imageHelp></div>
-              </div>
-              <input type="submit" value="submit" class="btn btn-success">
-            </form>
-          </div>
+        
+         
        </div>
         <!-- main-panel ends -->
       </div>

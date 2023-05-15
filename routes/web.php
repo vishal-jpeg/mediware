@@ -49,4 +49,28 @@ Route::post('/upload_category',[AdminController::class,'upload_category']);
 
 Route::get('/delete_category',[AdminController::class,'delete_category']);
 
+Route::get('/del_category/{id}',[AdminController::class,'del_category']);
+
 Route::get('/add_scheme',[AdminController::class,'add_scheme']);
+
+Route::post('/upload_scheme',[AdminController::class,'upload_scheme']);
+
+Route::get('/show_scheme/{id}',[HomeController::class,'show_scheme']);
+
+Route::get('/delete_scheme',[AdminController::class,'delete_scheme']);
+
+Route::get('/del_scheme/{id}',[AdminController::class,'del_scheme']);
+
+Route::get('/edit_scheme',[AdminController::class,'edit_scheme']);
+
+Route::get('/update_scheme/{id}', [AdminController::class,'update_scheme']);
+
+Route::post('/save_scheme/{id}',[AdminController::class,'save_scheme']);
+
+Route::post('/upload_feedback',[HomeController::class,'upload_feedback']);
+
+Route::get('/404',function(){
+    return view('user.404');
+});
+
+

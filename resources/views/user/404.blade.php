@@ -24,8 +24,6 @@
   
   <meta name="csrf-token" content="{{csrf_token()}}"> 
 
-
-
   <!--admin css-->
 
 </head>
@@ -42,21 +40,24 @@
     @include('user.navbar')
 
   
-    @include('user.top_page')
+    <div class="row justify-content-center align-items-center m-5">
+        <div class="col-md-6 p-3 text-center p-5  border-right border-primary mb-5"> 
+            <div style="text-border:1px solid blue;font-size:25px;">
+             <b><span style="color:white;background-color:blue;padding:2px">MEDI</span>WARE</b>
+            </div>
+            <p style="font-size:12px;text-align:center"><b>MEDICAL AWARENESS</b></p>
+        </div>
+        <div class="col-md-6 p-3 text-center p-5">
+            <span>
+                <h1>PAGE IS YET TO BE UPDATED</h1>
+                <p>
+                    This page yet to be updated by the adminstration 
+                </p>
+                <a href="{{url('/')}}">Back to home</a>
+            </span>
+        </div>
+    </div>
 
-
-    @include('user.about_page')
-    
-
-    @include('user.scheme')
-
-    
-    @include('user.camps')
-
-  
-    @include('user.feedback')
-
- 
     @include('user.footer')
 
 <script src="/user_res/assets/js/jquery-3.5.1.min.js"></script>

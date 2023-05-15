@@ -13,7 +13,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>MEDIWARE</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin_res/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin_res/assets/vendors/css/vendor.bundle.base.css">
@@ -58,6 +58,7 @@
                   </div>
               @endif 
             </div>
+            <h2 style="color:white;">Add Scheme Category</h2>
             <form action="{{url('upload_category')}}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="mb-3 mt-5">

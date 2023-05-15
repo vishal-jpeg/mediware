@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="/custom_img/cardio.png" alt=""  class="d-inline-block align-text-center">
-      <span class="text-primary">Medi</span>-Ware
+      <span class="text-primary text-capitalise">MEDI</span>WARE
     </a>
             
             <ul class="navbar-nav navbar-nav-right">

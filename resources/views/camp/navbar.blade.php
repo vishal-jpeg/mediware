@@ -7,14 +7,14 @@
             
             <ul class="navbar-nav navbar-nav-right">
               
+              <li class="nav-item  ">
+                <a class="nav-link" href="{{url('/')}}">Home</a>
+              </li> 
               <li class="nav-item active d-none d-lg-block">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link " href="{{url('camp')}}">Camps</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="{{url('camp')}}">Camps</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link "  href="#" >Schemes</a>
+                <a class="nav-link "  href="{{url('schemes')}}" >Schemes</a>
               </li>
 
               @if(Route::has('login'))

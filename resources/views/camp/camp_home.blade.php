@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>Home</title>
+  <title>MEDIWARE</title>
 
   <link rel="stylesheet" href="user_res/assets/css/maicons.css">
 
@@ -34,7 +34,7 @@
     @include('user.topbar')
 
 
-    @include('user.navbar')
+    @include('camp.navbar')
 
     <div class="row ">
       <div class="col-12 grid-margin">
