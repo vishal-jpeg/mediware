@@ -1,1 +1,3 @@
 **/vendor
+/public/admin_res/assets/vendor
+/public/user_res/assests/vendor
